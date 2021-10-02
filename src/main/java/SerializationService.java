@@ -1,16 +1,14 @@
-import java.io.IOException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class SerializationService {
 
     public String serializeProductAsJSON(Product product) throws Exception {
-
-        // you should implement
-        return null;
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.writeValueAsString(product);
     }
 
     public Product deserializeProductFromJSON(String str) throws Exception {
-
-        // you should implement
-        return null;
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.readValue(str, Product.class);
     }
 }
